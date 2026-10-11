@@ -1,0 +1,61 @@
+{
+  "preset": "electrician",
+  "trade": "electrician",
+  "trade_label": "electrical",
+  "trade_article": "an electrical",
+  "description": "Residential and light-commercial electrical work.",
+  "service_types": [
+    "outlet or switch repair",
+    "panel or breaker issue",
+    "lighting install",
+    "EV charger install",
+    "wiring inspection",
+    "other electrical"
+  ],
+  "emergency": {
+    "keywords": [
+      "sparks",
+      "burning smell",
+      "smoke from an outlet or panel",
+      "exposed live wires",
+      "downed power line",
+      "water in the electrical panel"
+    ],
+    "safety_script": "If you see smoke or fire, leave the building and call 911 from outside. Stay away from downed lines and exposed wires."
+  },
+  "faqs": [
+    {
+      "q": "Do you take emergency calls?",
+      "a": "Yes. For sparks, burning smells, or exposed wires I can connect you to the on-call team right away."
+    },
+    {
+      "q": "Can you quote over the phone?",
+      "a": "The team quotes after they have seen the work, so I cannot give a price on the call."
+    },
+    {
+      "q": "Do you install EV chargers?",
+      "a": "Yes. I can take your details and book a site visit."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "I can have someone from the team confirm license and insurance details with you."
+    }
+  ],
+  "qualifying_questions": [
+    "What is happening with the electrical, and where?",
+    "Do you smell burning or see scorch marks?",
+    "Is a breaker tripping repeatedly?",
+    "Is this a home or a business?"
+  ],
+  "hours": {
+    "weekly": {
+      "mon": "08:00-17:00",
+      "tue": "08:00-17:00",
+      "wed": "08:00-17:00",
+      "thu": "08:00-17:00",
+      "fri": "08:00-17:00",
+      "sat": null,
+      "sun": null
+    }
+  }
+}

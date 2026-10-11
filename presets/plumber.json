@@ -1,0 +1,61 @@
+{
+  "preset": "plumber",
+  "trade": "plumber",
+  "trade_label": "plumbing",
+  "trade_article": "a plumbing",
+  "description": "Residential and light-commercial plumbing.",
+  "service_types": [
+    "leak repair",
+    "drain cleaning",
+    "water heater",
+    "toilet or faucet repair",
+    "pipe repair",
+    "other plumbing"
+  ],
+  "emergency": {
+    "keywords": [
+      "burst pipe",
+      "gas smell",
+      "sewage backup",
+      "flooding",
+      "no water at all",
+      "water heater leaking badly"
+    ],
+    "safety_script": "If you smell gas, leave the building now and call 911 or the gas company emergency line from outside. If water is flooding, shut off the main valve if you can do it safely."
+  },
+  "faqs": [
+    {
+      "q": "Do you handle emergencies?",
+      "a": "Yes. I can connect you to the on-call team right away."
+    },
+    {
+      "q": "Can I get an exact price on the phone?",
+      "a": "The team gives a quote after they have seen the job, so I cannot give one on the call."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "I can check your ZIP code to confirm that we cover your area."
+    },
+    {
+      "q": "Do you work on water heaters?",
+      "a": "Yes, repairs and replacements. I can take the details and book a visit."
+    }
+  ],
+  "qualifying_questions": [
+    "What is the problem, and where in the home is it?",
+    "Is water still running or leaking right now?",
+    "Is this a house, apartment, or business?",
+    "Have you shut off the water to that area?"
+  ],
+  "hours": {
+    "weekly": {
+      "mon": "08:00-17:00",
+      "tue": "08:00-17:00",
+      "wed": "08:00-17:00",
+      "thu": "08:00-17:00",
+      "fri": "08:00-17:00",
+      "sat": "09:00-13:00",
+      "sun": null
+    }
+  }
+}

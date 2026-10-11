@@ -1,0 +1,95 @@
+{
+  "name": "AI Receptionist - tool-call responder (demo)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "receptionist-tools",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "a1f0c2d4-0001-4000-8000-000000000001",
+      "name": "Tool call webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "receptionist-tools"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Minimal tool-call responder for the AI receptionist tools.\n// DEMO LOGIC ONLY: replace the handle() bodies with your calendar / CRM calls.\n// Input: Vapi-style server message (message.toolCallList or message.toolCalls).\n// Output: { results: [ { toolCallId, result } ] } where result is a single-line string.\nfunction handle(name, args) {\n  if (name === \"check_availability\") {\n    const svc = args.service_type || \"service\";\n    return (\n      \"Open windows for \" +\n      svc +\n      \": morning and afternoon slots are available. Offer the caller at most two options.\"\n    );\n  }\n  if (name === \"book_appointment\") {\n    return (\n      \"Booking request recorded for \" +\n      (args.customer_name || \"the caller\") +\n      \". The team will confirm by text.\"\n    );\n  }\n  if (name === \"transfer_to_human\") {\n    return \"Transfer requested.\";\n  }\n  if (name === \"log_lead\") {\n    return \"Lead logged.\";\n  }\n  return \"Unknown tool: \" + name;\n}\n\nconst first = $input.first().json || {};\nconst body = first.body || first;\nconst msg = body.message || body;\nlet calls = Array.isArray(msg.toolCallList) ? msg.toolCallList : [];\nif (!calls.length && Array.isArray(msg.toolCalls)) {\n  calls = msg.toolCalls.map((c) => ({\n    id: c.id,\n    name: c.function && c.function.name,\n    arguments: c.function && c.function.arguments,\n  }));\n}\nconst results = [];\nfor (const c of calls) {\n  if (!c || !c.id) continue;\n  let args = c.arguments || {};\n  if (typeof args === \"string\") {\n    try {\n      args = JSON.parse(args);\n    } catch (e) {\n      args = {};\n    }\n  }\n  results.push({ toolCallId: c.id, result: handle(c.name, args) });\n}\nreturn [{ json: { results } }];\n"
+      },
+      "id": "a1f0c2d4-0002-4000-8000-000000000002",
+      "name": "Handle tool calls",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "firstIncomingItem",
+        "options": {}
+      },
+      "id": "a1f0c2d4-0003-4000-8000-000000000003",
+      "name": "Respond with results",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "content": "DEMO responder. Replace handle() in the Code node with your calendar / CRM calls. Returns {results:[{toolCallId,result}]}. Built with ai-receptionist-kit (SkynetLabs).",
+        "height": 120,
+        "width": 360
+      },
+      "id": "a1f0c2d4-0004-4000-8000-000000000004",
+      "name": "Read me",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -160
+      ]
+    }
+  ],
+  "connections": {
+    "Tool call webhook": {
+      "main": [
+        [
+          {
+            "node": "Handle tool calls",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle tool calls": {
+      "main": [
+        [
+          {
+            "node": "Respond with results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "built_with": "ai-receptionist-kit (SkynetLabs)"
+  }
+}

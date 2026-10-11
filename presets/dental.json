@@ -1,0 +1,61 @@
+{
+  "preset": "dental",
+  "trade": "dental",
+  "trade_label": "dental",
+  "trade_article": "a dental",
+  "description": "General dental practice front desk.",
+  "service_types": [
+    "new patient exam",
+    "cleaning",
+    "toothache or pain visit",
+    "filling or crown",
+    "whitening or cosmetic consult",
+    "other dental"
+  ],
+  "emergency": {
+    "keywords": [
+      "severe tooth pain",
+      "knocked-out tooth",
+      "facial swelling",
+      "uncontrolled bleeding",
+      "broken jaw",
+      "swelling that affects breathing or swallowing"
+    ],
+    "safety_script": "If swelling affects breathing or swallowing, or bleeding will not stop, please call 911 now."
+  },
+  "faqs": [
+    {
+      "q": "Are you accepting new patients?",
+      "a": "I can take your details and book a new patient visit."
+    },
+    {
+      "q": "Do you take my insurance?",
+      "a": "I can note your insurance provider and the office will confirm coverage."
+    },
+    {
+      "q": "Can you tell me what is wrong with my tooth?",
+      "a": "I am not able to give dental advice, but I can book you with the dentist or connect you to the team."
+    },
+    {
+      "q": "Do you see emergencies?",
+      "a": "Yes. Describe what is happening and I will connect you to the team."
+    }
+  ],
+  "qualifying_questions": [
+    "Are you a new or existing patient?",
+    "What is the reason for your visit?",
+    "Are you in pain right now?",
+    "Which days and times usually work for you?"
+  ],
+  "hours": {
+    "weekly": {
+      "mon": "08:00-17:00",
+      "tue": "08:00-17:00",
+      "wed": "08:00-17:00",
+      "thu": "08:00-17:00",
+      "fri": "08:00-14:00",
+      "sat": null,
+      "sun": null
+    }
+  }
+}

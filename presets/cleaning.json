@@ -1,0 +1,60 @@
+{
+  "preset": "cleaning",
+  "trade": "cleaning",
+  "trade_label": "cleaning",
+  "trade_article": "a cleaning",
+  "description": "Home and office cleaning services.",
+  "service_types": [
+    "regular house cleaning",
+    "deep clean",
+    "move-in or move-out clean",
+    "office cleaning",
+    "post-construction clean",
+    "other cleaning"
+  ],
+  "emergency": {
+    "keywords": [
+      "active flooding",
+      "sewage backup",
+      "fire or smoke damage cleanup",
+      "biohazard",
+      "water damage cleanup"
+    ],
+    "safety_script": "If anyone is in danger, please call 911 first. Stay out of areas with sewage or standing water."
+  },
+  "faqs": [
+    {
+      "q": "Do you bring your own supplies?",
+      "a": "I can note your preferences and the team will confirm what is provided."
+    },
+    {
+      "q": "How much will a clean cost?",
+      "a": "The team prepares a quote based on the size and condition of the space, so I cannot give one on the call."
+    },
+    {
+      "q": "Do you offer recurring service?",
+      "a": "Yes. I can record whether you want weekly, biweekly, monthly, or one-time."
+    },
+    {
+      "q": "Do you clean offices?",
+      "a": "Yes. I can take the details and set up a walkthrough."
+    }
+  ],
+  "qualifying_questions": [
+    "Is this a home or an office?",
+    "Roughly how many bedrooms and bathrooms, or how large is the space?",
+    "Is this a one-time or recurring clean?",
+    "Any pets or special instructions?"
+  ],
+  "hours": {
+    "weekly": {
+      "mon": "08:00-17:00",
+      "tue": "08:00-17:00",
+      "wed": "08:00-17:00",
+      "thu": "08:00-17:00",
+      "fri": "08:00-17:00",
+      "sat": "09:00-13:00",
+      "sun": null
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "preset": "hvac",
+  "trade": "hvac",
+  "trade_label": "HVAC (heating and cooling)",
+  "trade_article": "an HVAC",
+  "description": "Heating, cooling and ventilation service.",
+  "service_types": [
+    "AC repair",
+    "furnace or heat repair",
+    "tune-up or maintenance",
+    "new system estimate",
+    "thermostat or airflow issue",
+    "other HVAC"
+  ],
+  "emergency": {
+    "keywords": [
+      "gas smell",
+      "carbon monoxide alarm",
+      "no heat when it is under 40 degrees",
+      "no cooling for an elderly person or baby when it is over 95 degrees",
+      "burning smell from the unit",
+      "smoke from the unit"
+    ],
+    "safety_script": "If you smell gas or your carbon monoxide alarm is sounding, leave the building now and call 911 from outside."
+  },
+  "faqs": [
+    {
+      "q": "Do you offer emergency service?",
+      "a": "Yes. For no heat in freezing weather, no cooling in dangerous heat, or any gas or carbon monoxide concern, I can connect you to the on-call team."
+    },
+    {
+      "q": "Can you tell me what the repair will cost?",
+      "a": "A technician gives a quote after diagnosing the system, so I cannot give one on the call."
+    },
+    {
+      "q": "Do you do maintenance plans?",
+      "a": "Yes. I can take your details and have the team follow up."
+    },
+    {
+      "q": "Do you install new systems?",
+      "a": "Yes. I can book an in-home estimate visit."
+    }
+  ],
+  "qualifying_questions": [
+    "Is it the heating, the cooling, or something else?",
+    "What is the system doing, or not doing?",
+    "Is anyone in the home elderly, very young, or medically fragile?",
+    "Roughly how old is the system, if you know?"
+  ],
+  "hours": {
+    "weekly": {
+      "mon": "08:00-17:00",
+      "tue": "08:00-17:00",
+      "wed": "08:00-17:00",
+      "thu": "08:00-17:00",
+      "fri": "08:00-17:00",
+      "sat": "09:00-13:00",
+      "sun": null
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "preset": "roofer",
+  "trade": "roofer",
+  "trade_label": "roofing",
+  "trade_article": "a roofing",
+  "description": "Roof repair, replacement and storm damage.",
+  "service_types": [
+    "roof leak repair",
+    "roof replacement estimate",
+    "storm damage",
+    "gutter work",
+    "roof inspection",
+    "other roofing"
+  ],
+  "emergency": {
+    "keywords": [
+      "active roof leak",
+      "storm damage",
+      "tree through the roof",
+      "ceiling collapse",
+      "water coming through the ceiling"
+    ],
+    "safety_script": "If part of the ceiling is sagging or has collapsed, move everyone out of that room. If anyone is in danger, call 911."
+  },
+  "faqs": [
+    {
+      "q": "Do you do emergency tarping?",
+      "a": "I can connect you to the on-call team about emergency leak and storm damage calls."
+    },
+    {
+      "q": "Can you give me a price for a new roof?",
+      "a": "The team prices a roof after an inspection, so I cannot give one on the call."
+    },
+    {
+      "q": "Do you work with insurance claims?",
+      "a": "I can note that it is an insurance claim and the team will explain their process."
+    },
+    {
+      "q": "Do you inspect roofs?",
+      "a": "Yes. I can book an inspection visit."
+    }
+  ],
+  "qualifying_questions": [
+    "Is the roof leaking right now?",
+    "Is the damage from a recent storm?",
+    "What type of roof is it, if you know?",
+    "Is this a home or a commercial building?"
+  ],
+  "hours": {
+    "weekly": {
+      "mon": "08:00-17:00",
+      "tue": "08:00-17:00",
+      "wed": "08:00-17:00",
+      "thu": "08:00-17:00",
+      "fri": "08:00-17:00",
+      "sat": "09:00-13:00",
+      "sun": null
+    }
+  }
+}

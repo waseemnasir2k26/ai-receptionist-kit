@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "trade": "plumber",
+  "business_name": "Example Plumber Co.",
+  "agent_name": "Riley",
+  "hours": {
+    "timezone": "America/Chicago",
+    "weekly": {
+      "mon": "08:00-17:00",
+      "tue": "08:00-17:00",
+      "wed": "08:00-17:00",
+      "thu": "08:00-17:00",
+      "fri": "08:00-17:00",
+      "sat": "09:00-13:00",
+      "sun": null
+    }
+  },
+  "service_area_zips": [
+    "60601",
+    "60602",
+    "60603"
+  ],
+  "emergency": {
+    "keywords": [
+      "burst pipe",
+      "gas smell",
+      "sewage backup",
+      "flooding",
+      "no water at all",
+      "water heater leaking badly"
+    ],
+    "safety_script": "If you smell gas, leave the building now and call 911 or the gas company emergency line from outside. If water is flooding, shut off the main valve if you can do it safely."
+  },
+  "price_policy": "never",
+  "price_ranges": [],
+  "booking": {
+    "method": "webhook",
+    "webhook_url": "https://your-n8n-host.example.com/webhook/receptionist-tools"
+  },
+  "transfer_number": "+15555550100",
+  "recording_consent": {
+    "region": "US (conservative: assume all-party consent)",
+    "rule": "two_party"
+  },
+  "languages": [
+    "en"
+  ],
+  "faqs": [
+    {
+      "q": "Do you handle emergencies?",
+      "a": "Yes. I can connect you to the on-call team right away."
+    },
+    {
+      "q": "Can I get an exact price on the phone?",
+      "a": "The team gives a quote after they have seen the job, so I cannot give one on the call."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "I can check your ZIP code to confirm that we cover your area."
+    },
+    {
+      "q": "Do you work on water heaters?",
+      "a": "Yes, repairs and replacements. I can take the details and book a visit."
+    }
+  ],
+  "qualifying_questions": [
+    "What is the problem, and where in the home is it?",
+    "Is water still running or leaking right now?",
+    "Is this a house, apartment, or business?",
+    "Have you shut off the water to that area?"
+  ],
+  "service_types": [
+    "leak repair",
+    "drain cleaning",
+    "water heater",
+    "toilet or faucet repair",
+    "pipe repair",
+    "other plumbing"
+  ]
+}

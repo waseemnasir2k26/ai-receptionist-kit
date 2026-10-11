@@ -1,0 +1,152 @@
+[
+  {
+    "name": "check_availability",
+    "description": "Look up open appointment slots for a service. Read-only.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "service_type": {
+          "type": "string"
+        },
+        "preferred_date": {
+          "type": "string",
+          "description": "ISO date, e.g. 2026-03-14"
+        },
+        "zip": {
+          "type": "string",
+          "description": "ZIP or postal code of the job"
+        }
+      },
+      "required": [
+        "service_type"
+      ]
+    }
+  },
+  {
+    "name": "book_appointment",
+    "description": "Book an appointment in the chosen slot after the caller has confirmed it.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "customer_name": {
+          "type": "string",
+          "description": "Caller's full name"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Callback phone number"
+        },
+        "service_type": {
+          "type": "string",
+          "description": "What the visit is for"
+        },
+        "start_time": {
+          "type": "string",
+          "description": "Chosen slot, ISO 8601 with offset"
+        },
+        "urgency": {
+          "type": "string",
+          "enum": [
+            "routine",
+            "urgent",
+            "emergency"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "description": "Anything else the team should know"
+        },
+        "service_address": {
+          "type": "string",
+          "description": "Street address of the job"
+        }
+      },
+      "required": [
+        "customer_name",
+        "phone",
+        "service_type",
+        "start_time",
+        "service_address"
+      ]
+    }
+  },
+  {
+    "name": "transfer_to_human",
+    "description": "Transfer the live call to a person. Use for emergencies, requests for a human, or anything out of scope.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "description": "Why the call is being transferred"
+        },
+        "urgency": {
+          "type": "string",
+          "enum": [
+            "routine",
+            "urgent",
+            "emergency"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "description": "One-sentence handoff note"
+        }
+      },
+      "required": [
+        "reason"
+      ]
+    }
+  },
+  {
+    "name": "log_lead",
+    "description": "Record the call outcome and caller details for the team to follow up. Call before ending any call that was not booked or transferred.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "caller_name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "service_type": {
+          "type": "string"
+        },
+        "urgency": {
+          "type": "string",
+          "enum": [
+            "routine",
+            "urgent",
+            "emergency"
+          ]
+        },
+        "call_type": {
+          "type": "string",
+          "enum": [
+            "new_lead",
+            "existing_customer",
+            "emergency",
+            "spam_or_wrong_number",
+            "other"
+          ]
+        },
+        "after_hours": {
+          "type": "boolean",
+          "description": "True when the call came outside opening hours"
+        },
+        "summary": {
+          "type": "string",
+          "description": "One or two sentences on what the caller needs"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "call_type",
+        "summary"
+      ]
+    }
+  }
+]

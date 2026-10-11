@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "trade": "hvac",
+  "business_name": "Sample Comfort Heating & Air",
+  "agent_name": "Sam",
+  "hours": {
+    "timezone": "America/Phoenix",
+    "weekly": {
+      "mon": "07:00-18:00",
+      "tue": "07:00-18:00",
+      "wed": "07:00-18:00",
+      "thu": "07:00-18:00",
+      "fri": "07:00-18:00",
+      "sat": "08:00-12:00",
+      "sun": null
+    }
+  },
+  "service_area_zips": ["85001", "85003", "85004", "85006"],
+  "emergency": {
+    "keywords": [
+      "gas smell",
+      "carbon monoxide alarm",
+      "no cooling when it is over 105 degrees",
+      "burning smell from the unit"
+    ],
+    "safety_script": "If you smell gas or your carbon monoxide alarm is sounding, leave the building now and call 911 from outside."
+  },
+  "price_policy": "ranges",
+  "price_ranges": [
+    "Diagnostic visit: ranges vary; the team confirms before any work starts",
+    "Seasonal tune-up: ranges vary by system type"
+  ],
+  "booking": { "method": "callback" },
+  "transfer_number": "+15555550123",
+  "recording_consent": {
+    "region": "US-AZ (one-party, disclose anyway)",
+    "rule": "two_party"
+  },
+  "languages": ["en", "es"],
+  "faqs": [
+    {
+      "q": "Do you offer emergency service?",
+      "a": "Yes. I can connect you to the on-call team right away."
+    },
+    {
+      "q": "Do you service both heating and cooling?",
+      "a": "Yes, both. I can take the details for the team."
+    }
+  ],
+  "qualifying_questions": [
+    "Is it the heating or the cooling?",
+    "What is the system doing, or not doing?"
+  ],
+  "service_types": [
+    "AC repair",
+    "furnace repair",
+    "tune-up",
+    "new system estimate"
+  ]
+}
